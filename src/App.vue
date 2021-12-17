@@ -4,10 +4,23 @@
   </div>
 </template>
 
-<style>
-body{
-  margin: 0;
+<script>
+export default {
+  metaInfo: {
+    // if no subcomponents specify a metaInfo.title, this title will be used
+    title: 'Title of ',
+    // all titles will be injected into this template
+    titleTemplate: '%s | Not a fun site'
+  }
 }
+</script>
+
+<style>
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
