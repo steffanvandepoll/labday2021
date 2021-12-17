@@ -50,8 +50,7 @@ submitForm(){
             this.$router.push("redemption") }
         
     },
-remove() {
-this.vala = [];
+switch() {
 let currentIndex = this.buttons.length,  randomIndex;
 
   // While there remain elements to shuffle...
@@ -67,12 +66,16 @@ let currentIndex = this.buttons.length,  randomIndex;
   }
 
  },
+ remove()
+ {
+     this.vala = []
+ }
     
     },
  mounted: function () {
   window.setInterval(() => {
-    this.remove()
-  }, 10000)
+    this.switch()
+  }, 2000)
 },
     computed: {
        
