@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="daredevil">
     <div id="madness">
         <div id="0"><div></div></div>
         <div id="1"><div></div></div>
@@ -56,18 +56,19 @@ export default {
   position: absolute;
   height: 5%;
   padding: 10px;
-  width: 100%;
+  width: 90%;
 }
 
 #madness {
   position: absolute;
   margin-top: 5%;
-  height: 95%;
-  width: 100%;;
+  height: 90%;
+  width: 90%;;
 }
 
-html, body {
+html, body, #daredevil {
   padding: 0;
   margin: 0;
+  overflow: hidden;
 }
 </style>
