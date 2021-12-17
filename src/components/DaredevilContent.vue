@@ -1,6 +1,6 @@
 <template>
     <div id='catch-me-if-you-can'>
-        <div id="overlay"><img src="..\assets\pulp-fiction-john-travolta.gif" alt=""/></div>
+        <div id="overlay"></div>
         <div role="main" id="content">
             <h1>Daredevil</h1>
             <h2>About</h2>
