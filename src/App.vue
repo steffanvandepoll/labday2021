@@ -4,6 +4,17 @@
   </div>
 </template>
 
+<script>
+export default {
+  metaInfo: {
+    // if no subcomponents specify a metaInfo.title, this title will be used
+    title: 'Title of ',
+    // all titles will be injected into this template
+    titleTemplate: '%s | Not a fun site'
+  }
+}
+</script>
+
 <style>
 body{
   margin: 0;
