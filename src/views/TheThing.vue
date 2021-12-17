@@ -1,7 +1,7 @@
 <template>
 <div class="test"> 
     <h1 class="svg"> test </h1>
-    <img src="../assets/bigHand.png" alt="">
+    <button>press me</button>
     </div>
 </template>
 <script>
@@ -13,10 +13,16 @@ export default {
 </script>
 <style>
 
-.test {
-    width:800px;
-  height:800px;
-  cursor:url('../assets/bigHand.png'), auto;
+* {
+  
+  cursor:url('../assets/tbighand2.png'), auto;
+}
+button{
+    all: unset;
+}
+button:active {
+background-color: aqua;
+
 }
   
 </style>
