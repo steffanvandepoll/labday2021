@@ -1,6 +1,6 @@
 <template>
     <div id='catch-me-if-you-can'>
-        <div id="overlay"></div>
+        <div id="overlay"><img src="../assets/john.gif" alt=""/></div>
         <div role="main" id="content">
             <h1>Daredevil</h1>
             <h2>About</h2>
