@@ -72,13 +72,14 @@ export default {
   methods: {
     submitForm() {
       this.submitted = true;
-      if (this.formData === "E") {
+      if (this.formData === "E" || this.formData === "e") {
         this.$router.push("daredevil");
       }
     },
 
     hellToHeaven() {
       if (window.matchMedia("(prefers-reduced-motion)").matches) {
+        this.hell = false;
         console.log("welcome to heaven");
       } else {
         this.hell = true;
@@ -87,6 +88,9 @@ export default {
   },
   mounted() {
     this.hellToHeaven();
+  },
+  metaInfo: {
+    title: "Hell",
   },
 };
 </script>
