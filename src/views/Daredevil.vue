@@ -55,6 +55,7 @@ export default {
 #daredevil-form {
   position: absolute;
   height: 5%;
+  padding: 10px;
   width: 100%;
 }
 
