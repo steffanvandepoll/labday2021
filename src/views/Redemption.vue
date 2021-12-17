@@ -33,6 +33,7 @@ export default {
     background-repeat: no-repeat;
     background-position-y: bottom;
     background-position-x: calc(100% + 150px);
+    background-size: 50%;
     display: flex;
     height: 100vh;
     width: 100vw;
