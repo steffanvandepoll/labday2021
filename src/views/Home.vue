@@ -10,6 +10,8 @@
         <input name="form-data" v-model="formData">
     </form>
     </div>
+          <img class="elmo" alt="A totally fine picture of a magnificant person" src="../assets/elmo.png" />
+
   </div>
 </template>
 
@@ -45,6 +47,12 @@ export default {
    height: 100vh;
    width: 100vw;
    justify-content: center;
+   position: relative;
+ }
+ .elmo{
+   position: absolute;
+   width: 250px;
+   bottom: 0;
  }
  .wrapper{
    max-width: 860px;

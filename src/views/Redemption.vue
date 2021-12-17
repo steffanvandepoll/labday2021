@@ -9,7 +9,7 @@
         </nav>
         <h1>You did it!</h1>
         <h2>I'm not even mad</h2>
-        <p>This page was not about solving puzzles... </p>
+        <p>This page was never about solving puzzles... </p>
         <blockquote>'... it's about sending a message'</blockquote>
     </div>
   </div>
