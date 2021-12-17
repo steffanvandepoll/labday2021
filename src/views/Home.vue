@@ -7,9 +7,10 @@
       <p>So you still want to keep going? Good luck... Use the forms in the page to continue to the next page.</p>
       <p>If you can....</p>
       <form ref="form" @submit.prevent="submitForm" autocomplete="off">
-        <input name="navigation-input-field" placeholder="Send me to hell" v-model="formData" required pattern="Send me to hell" title="Just fill in the placeholder value">
+        <label for="navigation-input-field">Send me to hell</label>
+        <input name="navigation-input-field" placeholder="Send me to hell" v-model="formData" required pattern="Send me to hell" title="Maybe try reading the label again">
       </form>
-      <p v-if="submitted && formData && formData !== 'Send me to hell'">Maybe try reading the placeholder?</p>
+      <p v-if="submitted && formData && formData !== 'Send me to hell'">Maybe try reading the label?</p>
     </div>
     <img class="elmo" alt="A totally fine picture of a magnificant person" src="../assets/elmo.png" />
   </div>
@@ -66,10 +67,13 @@ export default {
 
  form{
    margin: 50px 0;
+   display: inline-flex;
+   flex-direction: column;
  }
  form input{
    height: 25px;
    width: 250px;
+   margin: 15px 0;
  }
 </style>
 
