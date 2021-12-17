@@ -3,11 +3,11 @@
       <div class="wrapper">
       <h1>Please don't visit this website!</h1>
       <h2>It's not going to be a pleasant experience</h2>
-      <p>This page is meant.. to make you feel how millions of people might feel everytime when they use our products. Don't want to be confronted? Thats fine. Feel free to leave at any time by pressing alt+f4 or by pressing that on/off button on your machine (for real, that works). </p>
-      <p>So you still want to keep going? Good luck... Use the forms in the page to continue to the next page.</p>
-      <p>If you can....</p>
+      <p>This page is meant to make you feel how millions of people might feel everytime when they use our products. Don't want to be confronted? Thats fine. Feel free to leave at any time by pressing <strong>alt+f4</strong> or by pressing that <strong>on/off button</strong> on your machine (for real, that works). </p>
+      <p>So you still want to keep going? Good luck... Use the forms in the upcoming pages to navigate your way to the end. This first page is easy</p>
+      <p>Things are only going to get worse from here...</p>
       <form ref="form" @submit.prevent="submitForm" autocomplete="off">
-        <label for="navigation-input-field">Send me to hell</label>
+        <label for="navigation-input-field"><strong>Send me to hell</strong></label>
         <input name="navigation-input-field" placeholder="Send me to hell" v-model="formData" required pattern="Send me to hell" title="Maybe try reading the label again">
       </form>
       <p v-if="submitted && formData && formData !== 'Send me to hell'">Maybe try reading the label?</p>
@@ -62,7 +62,7 @@ export default {
 
  p{
    font-size: 16px;
-   line-height: 21px;
+   line-height: 23px;
  }
 
  form{
