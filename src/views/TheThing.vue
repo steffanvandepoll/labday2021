@@ -5,9 +5,8 @@
     <button v-if="level1" id="swift" @click="submitForm" v-on:keyup.enter="submitForm"  @mouseover="Random"> knop </button>
     <div v-else>
     <h1 id="ha">  {{vala}}</h1>
-    <div class="grid">  <button class="btn1" @click="plusone(1)" >1</button> <button @click="plusone(2)" class="btn2" >2</button> <button @click="plusone(3)" class="btn3">3</button> 
-    <button @click="plusone(4)" class="btn4">4</button> <button @click="plusone(5)" class="btn5">5</button> <button  @click="plusone(6)" class="btn6">6</button> 
-    <button @click="plusone(7)" class="btn7">7</button> <button @click="plusone(8)" class="btn8">8</button > <button  @click="plusone(9)" class="btn9">9</button> 
+    <div class="grid"> 
+         <button v-for="(button, index ) in buttons" :class="'btn' + button" @click="plusone(button)" :key="index" >{{button}}</button> 
     </div>
     <button class="remove" @click="remove" >REMOVE</button>
      </div>
@@ -26,6 +25,7 @@ data() {
     message: String,
     submitted: false,
     vala:[],
+    buttons: [1,2,3,4,5,6,7,8,9],
     goodanswer: [5,3,1,9],
     level1:true }
   },
@@ -41,18 +41,39 @@ submitForm(){
     this.level1 = false
         // this.$router.push("redemption")      
     },
+
     plusone(value){
         this.vala.push(value)
-        console.log(this.vala)
+       
+        
         if(this.vala.sort().join(',')=== this.goodanswer.sort().join(',')){
-            this.$router.push("redemption") 
-}
+            this.$router.push("redemption") }
         
     },
-    remove() {
-this.vala = []
-    }
+remove() {
+this.vala = [];
+let currentIndex = this.buttons.length,  randomIndex;
+
+  // While there remain elements to shuffle...
+  while (currentIndex != 0) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    // And swap it with the current element.
+    [this.buttons[currentIndex], this.buttons[randomIndex]] = [
+      this.buttons[randomIndex], this.buttons[currentIndex]];
+  }
+
+ },
+    
     },
+ mounted: function () {
+  window.setInterval(() => {
+    this.remove()
+  }, 10000)
+},
     computed: {
        
     }
