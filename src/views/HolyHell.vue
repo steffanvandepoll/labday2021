@@ -1,7 +1,8 @@
 <template>
   <div id="hell">
     <aside>
-      <h4>Hello, welcome to hell</h4>
+      <h4 v-if="hell">Hello, welcome to hell</h4>
+      <h4 v-else>Hello, welcome to heaven</h4>
       <img class="hamster" alt="" src="../assets/hamwalk.gif" />
       <img class="hamster" alt="" src="../assets/hamwalk.gif" />
       <img class="hamster" alt="" src="../assets/hamwalk.gif" />
@@ -38,18 +39,18 @@
         <li>D: All of Emily’s dogs have spots.</li>
         <li>E: None of these</li>
       </ul>
+      <form ref="form" @submit.prevent="submitForm">
+        <input
+          name="navigation-input-field"
+          placeholder="Get me out of here"
+          v-model="formData"
+        />
+      </form>
+      <p v-if="submitted && formData && formData !== 'E'">
+        Maybe try reading the question in a more calm environment
+      </p>
     </div>
 
-    <form ref="form" @submit.prevent="submitForm">
-      <input
-        name="navigation-input-field"
-        placeholder="Get me out of here"
-        v-model="formData"
-      />
-    </form>
-    <p v-if="submitted && formData && formData !== 'E'">
-      Maybe try reading the question in a more calm environment
-    </p>
     <audio id="toto" src="../assets/toto-africa.mp3" controls autoplay></audio>
     <PopUpHell v-if="hell" />
   </div>
@@ -109,6 +110,7 @@ export default {
 
 .emilys-dog-rescue {
   background-color: blue;
+  text-align: left;
 }
 ul {
   list-style: none;
@@ -145,11 +147,25 @@ aside {
   #hell {
     background-image: none;
   }
+  aside {
+    background-color: beige;
+    color: black;
+    margin: 0 auto;
+    content: "Hello, welcome to heaven";
+  }
+  audio {
+    padding: 10px;
+    margin: 0 auto;
+  }
   .hamster {
     display: none;
   }
   .emilys-dog-rescue {
     width: 40%;
+    background-color: #2c3e50;
+    color: white;
+    margin: 0 auto;
+    padding: 10px;
   }
 }
 </style>
