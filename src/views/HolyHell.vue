@@ -1,6 +1,7 @@
 <template>
   <div class="hell">
     <p>Welcome to hell</p>
+
     <aside>
       <h4>Helloo</h4>
       <img alt="" src="../assets/hamwalk.gif" />
@@ -26,6 +27,8 @@
       <img alt="" src="../assets/hamwalk.gif" />
       <img alt="" src="../assets/hamwalk.gif" />
     </aside>
+
+    <audio src="../assets/toto-africa.mp3" controls autoplay></audio>
   </div>
 </template>
 
