@@ -32,6 +32,9 @@ export default {
         this.$router.push("hell")      
       }
     }
+  },
+  metaInfo: {
+    title: 'Home',
   }
 }
 </script>

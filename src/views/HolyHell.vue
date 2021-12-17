@@ -1,41 +1,97 @@
 <template>
-  <div class="hell">
-    <p>Welcome to hell</p>
-
+  <div id="hell">
     <aside>
-      <h4>Helloo</h4>
-      <img alt="" src="../assets/hamwalk.gif" />
-      <img alt="" src="../assets/hamwalk.gif" />
-      <img alt="" src="../assets/hamwalk.gif" />
-      <img alt="" src="../assets/hamwalk.gif" />
-      <img alt="" src="../assets/hamwalk.gif" />
-      <img alt="" src="../assets/hamwalk.gif" />
-      <img alt="" src="../assets/hamwalk.gif" />
+      <h4>Hello, welcome to hell</h4>
+      <img class="hamster" alt="" src="../assets/hamwalk.gif" />
+      <img class="hamster" alt="" src="../assets/hamwalk.gif" />
+      <img class="hamster" alt="" src="../assets/hamwalk.gif" />
+      <img class="hamster" alt="" src="../assets/hamwalk.gif" />
+      <img class="hamster" alt="" src="../assets/hamwalk.gif" />
+      <img class="hamster" alt="" src="../assets/hamwalk.gif" />
+      <img class="hamster" alt="" src="../assets/hamwalk.gif" />
       <p>
-        <img alt="" src="../assets/gerbil.gif" />
-        <img alt="" src="../assets/gerbil.gif" />
-        <img alt="" src="../assets/hamu.gif" />
-        <img alt="" src="../assets/hamu.gif" />
-        <img alt="" src="../assets/gerbil.gif" />
-        <img alt="" src="../assets/gerbil.gif" />
+        <img class="hamster" alt="" src="../assets/gerbil.gif" />
+        <img class="hamster" alt="" src="../assets/gerbil.gif" />
+        <img class="hamster" alt="" src="../assets/hamu.gif" />
+        <img class="hamster" alt="" src="../assets/hamu.gif" />
+        <img class="hamster" alt="" src="../assets/gerbil.gif" />
+        <img class="hamster" alt="" src="../assets/gerbil.gif" />
       </p>
-      <img alt="" src="../assets/hamwalk.gif" />
-      <img alt="" src="../assets/hamwalk.gif" />
-      <img alt="" src="../assets/hamwalk.gif" />
-      <img alt="" src="../assets/hamwalk.gif" />
-      <img alt="" src="../assets/hamwalk.gif" />
-      <img alt="" src="../assets/hamwalk.gif" />
-      <img alt="" src="../assets/hamwalk.gif" />
+      <img class="hamster" alt="" src="../assets/hamwalk.gif" />
+      <img class="hamster" alt="" src="../assets/hamwalk.gif" />
+      <img class="hamster" alt="" src="../assets/hamwalk.gif" />
+      <img class="hamster" alt="" src="../assets/hamwalk.gif" />
+      <img class="hamster" alt="" src="../assets/hamwalk.gif" />
+      <img class="hamster" alt="" src="../assets/hamwalk.gif" />
+      <img class="hamster" alt="" src="../assets/hamwalk.gif" />
     </aside>
 
-    <audio src="../assets/toto-africa.mp3" controls autoplay></audio>
+    <div class="emilys-dog-rescue">
+      <p>
+        Emily has three dogs and two cats. They are all brown, but one of the
+        dogs has spots. His name is Spot. Which of the following is true?
+      </p>
+      <ul>
+        <li>A: Emily has three animals in total.</li>
+        <li>B: Emily has more cats than dogs.</li>
+        <li>C: One of Emily’s cats is black.</li>
+        <li>D: All of Emily’s dogs have spots.</li>
+        <li>E: None of these</li>
+      </ul>
+    </div>
+
+    <form ref="form" @submit.prevent="submitForm">
+      <input
+        name="navigation-input-field"
+        placeholder="Get me out of here"
+        v-model="formData"
+      />
+    </form>
+    <p v-if="submitted && formData && formData !== 'E'">
+      Maybe try reading the question in a more calm environment
+    </p>
+    <audio id="toto" src="../assets/toto-africa.mp3" controls autoplay></audio>
+    <PopUpHell v-if="hell" />
   </div>
 </template>
 
-<script></script>
+<script>
+import PopUpHell from "@/components/PopUpHell.vue";
+
+export default {
+  components: { PopUpHell },
+  name: "Home",
+  data: function () {
+    return {
+      formData: "",
+      submitted: false,
+      hell: false,
+    };
+  },
+  methods: {
+    submitForm() {
+      this.submitted = true;
+      if (this.formData === "E") {
+        this.$router.push("daredevil");
+      }
+    },
+
+    hellToHeaven() {
+      if (window.matchMedia("(prefers-reduced-motion)").matches) {
+        console.log("welcome to heaven");
+      } else {
+        this.hell = true;
+      }
+    },
+  },
+  mounted() {
+    this.hellToHeaven();
+  },
+};
+</script>
 
 <style>
-.hell {
+#hell {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -43,10 +99,23 @@
   color: #2c3e50;
   width: 100vw;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
 
   background-image: url("../assets/banana-dance-dancing-banana.gif");
   background-size: 40px;
   background-repeat: repeat;
+}
+
+.emilys-dog-rescue {
+  background-color: blue;
+}
+ul {
+  list-style: none;
+}
+
+audio {
+  bottom: 0px;
 }
 
 #nav {
@@ -70,5 +139,17 @@ aside {
   font-style: italic;
   color: orange;
   background-color: yellow;
+}
+
+@media (prefers-reduced-motion) {
+  #hell {
+    background-image: none;
+  }
+  .hamster {
+    display: none;
+  }
+  .emilys-dog-rescue {
+    width: 40%;
+  }
 }
 </style>
