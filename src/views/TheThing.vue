@@ -50,7 +50,7 @@ submitForm(){
         
     },
     remove() {
-this.vala.splice(-1)
+this.vala = []
     }
     },
     computed: {
