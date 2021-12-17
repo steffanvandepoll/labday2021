@@ -26,13 +26,14 @@ export default {
 <style scoped>
 
  .redemption{
-   background-image: url("../assets/joker.jpg");
-   background-repeat: no-repeat;
-   background-position-y: bottom;
-   background-position-x: calc(100% + 150px);
-   display: flex;
-   height: 100vh;
-   width: 100vw;
-   justify-content: center;
+    background-color: #fdfdfd;
+    background-image: url("../assets/joker.jpg");
+    background-repeat: no-repeat;
+    background-position-y: bottom;
+    background-position-x: calc(100% + 150px);
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    justify-content: center;
  }
 </style>
